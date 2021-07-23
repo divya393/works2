@@ -1,0 +1,86 @@
+@import "_reset";
+
+//Variables
+$bg-color: rgb(253, 212, 212);
+$btn-font-col: white;
+
+//Mixins(reuse)
+@mixin text {
+    width: 80%;
+    height: 30%;
+    margin: auto;
+    background-color: rgb(191, 243, 114);
+    border:1px solid rgb(53, 85, 5);
+    border-radius: 20%;
+    padding: 30px;
+}
+@mixin font {
+    font-size: 30px;
+    color:rgb(68, 11, 68);
+    text-align: center;
+    text-transform: uppercase;
+}
+@mixin para {
+    line-height: 1.5rem;
+    color: black;
+    font-weight: 500;
+    
+}
+
+
+
+//Styles
+body{
+    background-color: $bg-color;
+}
+h1{
+    border:2px solid rgb(182, 39, 182);
+    background-color: rgb(248, 190, 248);
+    border-radius: 20%;
+    height:8%;
+    width:20%;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    margin-top: 10px;
+    color:rgb(68, 11, 68);
+}
+.text1{
+    
+        @include text;
+        h2{
+            @include font;
+        }
+        p{
+            @include para;
+        }
+    
+}
+.text2{
+    
+    @include text;
+    h2{
+        @include font;
+    }
+    p{
+        @include para;
+    }
+
+}
+.btn{
+    width: 120px;
+    height: 50px;
+    border: 1px solid blue;
+    background-color: white;
+    color: blue;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 40%;
+    margin: auto;
+    display: block;
+    &:hover{
+        background-color: blue;
+        color:white;
+    }
+}
+
